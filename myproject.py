@@ -6,7 +6,8 @@ t = np.linspace(-2*np.pi, 2*np.pi, 1000)
 def generate_sine(f, A):
     return A*np.sin(2*np.pi*f*t)
 
-# def generate_square():
+def generate_square(f, A):
+    return A*np.sign(sin(2*np.pi*f*t))
 
 # def triangular
 
@@ -22,6 +23,13 @@ def generate_unit_impulse(t0):
 
 plt.plot(t, generate_sine(1/(2*np.pi), -1))
 plt.title("Sine Signal")
+plt.xlabel("Time (s)")
+plt.ylabel("Amplitude")
+plt.grid(True)
+plt.show()
+
+plt.plot(t, generate_square(1, 1))
+plt.title("Square Signal")
 plt.xlabel("Time (s)")
 plt.ylabel("Amplitude")
 plt.grid(True)
