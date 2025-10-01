@@ -1,18 +1,14 @@
-from signals import generate_sine_wave
+from functions import *
 import matplotlib.pyplot as plt
 
-frequency = 5
-duration = 10
-sample_rate=100
+t1, y1 = generate_sine(1, 1)
+t2, y2 = sine_time_shifting(1, 1, shift=1.4)
 
-wave = generate_sine_wave(frequency, duration, sample_rate)
-
-t = [i / sample_rate 
-     for i in range(int(duration * sample_rate))]
-
-plt.plot(t, wave)
-plt.xlabel("Time [s]")
+plt.plot(t1, y1, label="original graph")
+plt.plot(t2, y2, label="time shifted by 2")
+plt.title("Sinusoidal Signal")
+plt.xlabel("Time (s)")
 plt.ylabel("Amplitude")
-plt.title(f"{frequency}Hz Sine Wave")
+plt.legend()
 plt.grid(True)
 plt.show()
