@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "signal-processing-tools"
+version = "0.1.0"
+description = "Generates signals, modifies them, and plots them"
+authors = [
+    {name = "Yena", email = "pyoyena@gmail.com"}
+]
+dependencies = ["numpy", "matplotlib"]
+
+[project.optional-dependencies]
+test = ["pytest"]
