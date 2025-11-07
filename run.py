@@ -30,3 +30,19 @@ plt.ylabel("Amplitude")
 plt.legend()
 plt.grid(True)
 plt.show()
+
+
+# TDD 
+
+# Normal case
+t, y = generate_sine(f=1, A=1)
+assert len(t) == 1000
+assert len(y) == 1000
+
+# Edge case - zero frequency
+t, y = generate_sine(f=0, A=1)
+assert max(y) == 0
+
+# Edge case - zero amplitude  
+t, y = generate_sine(f=1, A=0)
+assert max(y) == 0
